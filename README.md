@@ -12,6 +12,10 @@ In this project, Python is used to explore data related to bike share systems fo
 
 ### Files used
 bikeshare_2.py
+Data files used to perform this analysis include the following:
+  chicago.csv
+  new_york_city.csv
+  washington.csv
 
 ### Credits
 Udacity Nanodegree program
