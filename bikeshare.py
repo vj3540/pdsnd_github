@@ -15,7 +15,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello! Let\'s explore some US bikeshare data for Chicago, New York City and Washington!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("Would you like to see data for Chicago, New york city or Washington? \n")
@@ -58,7 +58,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-   
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -108,7 +108,7 @@ def time_stats(df):
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
-    
+
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -161,33 +161,33 @@ def user_stats(df, city):
     # TO DO: Display earliest, most recent, and most common year of birth
         earliest_yob = sorted(df.groupby(['Birth Year'])['Birth Year'])[0][0]
         print("The earier year of birth is: ", earliest_yob, "\n")
-            
+
         most_recent_yob = sorted(df.groupby(['Birth Year'])['Birth Year'], reverse=True)[0][0]
         print("The most recent year of birth is: ", most_recent_yob, "\n")
-        
+
         most_common_yob = df['Birth Year'].mode()[0]
         print("The most common year of birth is: ", most_common_yob, "\n")
-   
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
     # TO DO: Solicit user input and diplay raw data 5 lines at a time
-    
+
     rows = 1
     while True:
         rd = input("\nWould you like to see 5 lines of raw data? Enter Yes or No.\n")
         if rd.lower() == 'yes':
             print(df.iloc[rows:rows+5])
-            rows = rows+5 
+            rows = rows+5
         elif rd.lower() == "no":
             break
         else:
             rd = input("Invalid response.  Please enter Yes or No:\n")
-    
+
     #rd = ""
     #while rd.lower() != "yes" or rd.lower()!!="no"
-    
+
 
 def main():
     while True:
